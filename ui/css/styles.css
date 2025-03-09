@@ -626,3 +626,251 @@ body {
         margin-bottom: 1rem;
     }
 }
+
+/* Notifications */
+.notifications-dropdown {
+    position: relative;
+}
+
+.notification-icon {
+    font-size: 1.2rem;
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    min-width: 18px;
+    text-align: center;
+}
+
+.notifications-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.notifications-menu.show {
+    display: block;
+}
+
+.notification-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.notification-item:hover {
+    background-color: #f8f9fa;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item.unread {
+    background-color: #f0f7ff;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.welcome-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-text h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.semester-info {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.quick-actions .btn-secondary {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.quick-actions .btn-secondary:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Resources Section */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.resource-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--border-color);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.resource-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.resource-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.resource-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Academic Calendar */
+.calendar-events {
+    margin-top: 1rem;
+}
+
+.calendar-event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.calendar-event:last-child {
+    margin-bottom: 0;
+}
+
+.event-date {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.event-date .day {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.event-date .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.event-info {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.event-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.event-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.event-type {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.event-type.academic {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.event-type.exam {
+    background-color: #fbe9e7;
+    color: #d84315;
+}
+
+.event-type.holiday {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .welcome-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .quick-actions .btn-secondary {
+        width: 100%;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-event {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .event-info {
+        padding: 0;
+    }
+}

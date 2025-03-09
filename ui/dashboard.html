@@ -14,11 +14,33 @@
             <li><a href="courses.html">Course Catalog</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="profile.html">Profile</a></li>
+            <li class="notifications-dropdown">
+                <a href="#" id="notificationsToggle">
+                    <span class="notification-icon">🔔</span>
+                    <span class="notification-badge" id="notificationCount">0</span>
+                </a>
+                <div class="notifications-menu" id="notificationsMenu">
+                    <!-- Notifications will be populated here -->
+                </div>
+            </li>
             <li><a href="#" id="logout">Logout</a></li>
         </ul>
     </nav>
 
     <div class="container">
+        <div class="welcome-banner">
+            <div class="welcome-content">
+                <div class="welcome-text">
+                    <h1>Welcome back, <span id="userName">Student</span>!</h1>
+                    <p class="semester-info">Current Semester: Spring 2024</p>
+                </div>
+                <div class="quick-actions">
+                    <button class="btn-secondary" onclick="window.location.href='courses.html'">Browse Courses</button>
+                    <button class="btn-secondary" onclick="window.location.href='schedule.html'">View Schedule</button>
+                </div>
+            </div>
+        </div>
+
         <div class="dashboard-header">
             <h1>Welcome, <span id="userName">Student</span></h1>
             <div class="quick-stats">
@@ -33,6 +55,10 @@
                 <div class="stat-card">
                     <h3>Credits</h3>
                     <p id="totalCredits">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Attendance Rate</h3>
+                    <p id="attendanceRate">0%</p>
                 </div>
             </div>
         </div>
@@ -71,6 +97,43 @@
             <h2>Course Progress Overview</h2>
             <div id="courseProgress" class="progress-grid">
                 <!-- Course progress will be populated here -->
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Academic Calendar</h2>
+            <div class="calendar-events" id="academicCalendar">
+                <!-- Calendar events will be populated here -->
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Quick Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <span class="resource-icon">📚</span>
+                    <h3>Library</h3>
+                    <p>Access digital resources and reserve study rooms</p>
+                    <a href="#" class="btn-secondary">Visit Library</a>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">📝</span>
+                    <h3>Academic Support</h3>
+                    <p>Connect with tutors and academic advisors</p>
+                    <a href="#" class="btn-secondary">Get Help</a>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">📅</span>
+                    <h3>Office Hours</h3>
+                    <p>Schedule meetings with your professors</p>
+                    <a href="#" class="btn-secondary">Book Session</a>
+                </div>
+                <div class="resource-card">
+                    <span class="resource-icon">🎓</span>
+                    <h3>Career Services</h3>
+                    <p>Explore internships and career opportunities</p>
+                    <a href="#" class="btn-secondary">Learn More</a>
+                </div>
             </div>
         </section>
     </div>
