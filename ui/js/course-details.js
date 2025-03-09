@@ -10,51 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(window.location.search);
     const courseId = parseInt(urlParams.get('id'));
 
-    // Sample course data - In a real application, this would come from an API
-    const courses = {
-        1: {
-            id: 1,
-            code: 'CS101',
-            title: 'Introduction to Computer Science',
-            description: 'An introduction to computer science concepts and programming. Topics include algorithm development, data types, control structures, functions, and basic object-oriented programming concepts.',
-            credits: 3,
-            instructor: {
-                name: 'Dr. Smith',
-                email: 'smith@university.edu',
-                officeHours: 'Monday/Wednesday 2:00 PM - 4:00 PM'
-            },
-            schedule: {
-                days: 'Monday/Wednesday',
-                time: '10:00 AM - 11:30 AM',
-                location: 'Room 101'
-            },
-            availableSeats: 5
-        },
-        2: {
-            id: 2,
-            code: 'MATH201',
-            title: 'Calculus I',
-            description: 'Introduction to differential and integral calculus. Topics include limits, continuity, derivatives, applications of derivatives, integrals, and fundamental theorem of calculus.',
-            credits: 4,
-            instructor: {
-                name: 'Dr. Johnson',
-                email: 'johnson@university.edu',
-                officeHours: 'Tuesday/Thursday 1:00 PM - 3:00 PM'
-            },
-            schedule: {
-                days: 'Tuesday/Thursday',
-                time: '2:00 PM - 3:30 PM',
-                location: 'Room 205'
-            },
-            availableSeats: 8
-        }
-    };
+    // Get course data from localStorage
+    const courses = JSON.parse(localStorage.getItem('availableCourses')) || [];
+    const course = courses.find(c => c.id === courseId);
 
-    // Get course data
-    const course = courses[courseId];
     if (!course) {
         alert('Course not found');
-        window.location.href = './dashboard.html';
+        window.location.href = './courses.html';
         return;
     }
 
@@ -192,6 +154,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('courseCredits').textContent = `Credits: ${course.credits}`;
     document.getElementById('courseDescription').textContent = course.description;
 
+    // Set course image based on department
+    const courseImage = document.getElementById('courseImage');
+    switch(course.department) {
+        case 'CS':
+            courseImage.src = 'images/computer-science.jpg';
+            break;
+        case 'MATH':
+            courseImage.src = 'images/mathematics.jpg';
+            break;
+        case 'ENG':
+            courseImage.src = 'images/english.jpg';
+            break;
+        default:
+            courseImage.src = 'images/course-placeholder.jpg';
+    }
+    courseImage.alt = `${course.code} - ${course.title}`;
+
     // Update instructor details
     document.getElementById('instructorName').textContent = course.instructor.name;
     document.getElementById('instructorEmail').textContent = course.instructor.email;
@@ -201,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('classDays').textContent = course.schedule.days;
     document.getElementById('classTime').textContent = course.schedule.time;
     document.getElementById('classLocation').textContent = course.schedule.location;
-    document.getElementById('availableSeats').textContent = course.availableSeats;
+    document.getElementById('availableSeats').textContent = course.seats;
 
     // Handle enrollment
     const enrollButton = document.getElementById('enrollButton');
@@ -217,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         statusDiv.className = 'enrollment-status status-enrolled';
         statusDiv.textContent = 'Currently Enrolled';
         enrollButton.parentNode.appendChild(statusDiv);
-    } else if (course.availableSeats === 0) {
+    } else if (course.seats === 0) {
         enrollButton.textContent = 'Course Full';
         enrollButton.classList.add('btn-disabled');
         enrollButton.disabled = true;
@@ -235,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw new Error('You are already enrolled in this course');
             }
 
-            if (course.availableSeats === 0) {
+            if (course.seats === 0) {
                 throw new Error('Sorry, this course is full');
             }
 
@@ -258,6 +237,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 schedule: course.schedule
             });
             localStorage.setItem('enrollments', JSON.stringify(enrollments));
+
+            // Update available seats
+            const availableCourses = JSON.parse(localStorage.getItem('availableCourses'));
+            const updatedCourses = availableCourses.map(c => {
+                if (c.id === courseId) {
+                    return { ...c, seats: c.seats - 1 };
+                }
+                return c;
+            });
+            localStorage.setItem('availableCourses', JSON.stringify(updatedCourses));
 
             // Show success message and redirect
             alert('Successfully enrolled in the course!');

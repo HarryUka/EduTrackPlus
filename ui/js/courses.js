@@ -6,18 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // Sample data - In a real application, this would come from an API
-    const courses = [
+    // Sample course data - Store in localStorage for persistence
+    const sampleCourses = [
         {
             id: 1,
             code: 'CS101',
             title: 'Introduction to Computer Science',
             department: 'CS',
             level: '100',
-            instructor: 'Dr. Smith',
-            description: 'An introduction to computer science concepts and programming.',
+            instructor: {
+                name: 'Dr. Smith',
+                email: 'smith@university.edu',
+                officeHours: 'Monday/Wednesday 2:00 PM - 4:00 PM'
+            },
+            description: 'An introduction to computer science concepts and programming. Topics include algorithm development, data types, control structures, functions, and basic object-oriented programming concepts.',
             credits: 3,
-            seats: 5
+            seats: 5,
+            schedule: {
+                days: 'Monday/Wednesday',
+                time: '10:00 AM - 11:30 AM',
+                location: 'Room 101'
+            }
         },
         {
             id: 2,
@@ -25,10 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Calculus I',
             department: 'MATH',
             level: '200',
-            instructor: 'Dr. Johnson',
-            description: 'Introduction to differential and integral calculus.',
+            instructor: {
+                name: 'Dr. Johnson',
+                email: 'johnson@university.edu',
+                officeHours: 'Tuesday/Thursday 1:00 PM - 3:00 PM'
+            },
+            description: 'Introduction to differential and integral calculus. Topics include limits, continuity, derivatives, applications of derivatives, integrals, and fundamental theorem of calculus.',
             credits: 4,
-            seats: 8
+            seats: 8,
+            schedule: {
+                days: 'Tuesday/Thursday',
+                time: '2:00 PM - 3:30 PM',
+                location: 'Room 205'
+            }
         },
         {
             id: 3,
@@ -36,13 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'Technical Writing',
             department: 'ENG',
             level: '100',
-            instructor: 'Prof. Williams',
-            description: 'Fundamentals of technical writing and communication.',
+            instructor: {
+                name: 'Prof. Williams',
+                email: 'williams@university.edu',
+                officeHours: 'Monday/Friday 11:00 AM - 1:00 PM'
+            },
+            description: 'Fundamentals of technical writing and communication. Learn to write clear, concise technical documents, reports, and presentations.',
             credits: 3,
-            seats: 12
+            seats: 12,
+            schedule: {
+                days: 'Monday/Wednesday/Friday',
+                time: '1:00 PM - 2:00 PM',
+                location: 'Room 303'
+            }
         }
     ];
 
+    // Store courses in localStorage if not already present
+    if (!localStorage.getItem('availableCourses')) {
+        localStorage.setItem('availableCourses', JSON.stringify(sampleCourses));
+    }
+
+    // Get courses from localStorage
+    const courses = JSON.parse(localStorage.getItem('availableCourses'));
     let filteredCourses = [...courses];
 
     // Add CSS styles for course cards
@@ -96,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredCourses = courses.filter(course => {
             const matchesSearch = course.title.toLowerCase().includes(searchTerm) ||
                                 course.code.toLowerCase().includes(searchTerm) ||
-                                course.instructor.toLowerCase().includes(searchTerm);
+                                course.instructor.name.toLowerCase().includes(searchTerm);
             
             const matchesDepartment = !department || course.department === department;
             const matchesLevel = !level || course.level === level;
@@ -116,12 +150,13 @@ document.addEventListener('DOMContentLoaded', () => {
             courseElement.className = 'course-card';
             courseElement.innerHTML = `
                 <h3>${course.code}: ${course.title}</h3>
-                <p><strong>Instructor:</strong> ${course.instructor}</p>
+                <p><strong>Instructor:</strong> ${course.instructor.name}</p>
                 <p><strong>Department:</strong> ${course.department}</p>
                 <p><strong>Level:</strong> ${course.level}</p>
                 <p><strong>Credits:</strong> ${course.credits}</p>
+                <p><strong>Schedule:</strong> ${course.schedule.days} ${course.schedule.time}</p>
                 <p class="seats-available"><strong>Available Seats:</strong> ${course.seats}</p>
-                <a href="./course-details.html?id=${course.id}" class="btn-primary">View Details</a>
+                <a href="course-details.html?id=${course.id}" class="btn-primary">View Details</a>
             `;
             courseList.appendChild(courseElement);
         });

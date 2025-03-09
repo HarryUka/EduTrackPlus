@@ -874,3 +874,23 @@ body {
         padding: 0;
     }
 }
+
+/* Course image styles */
+.course-image {
+    margin: 2rem 0;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.course-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.course-image img:hover {
+    transform: scale(1.02);
+}
