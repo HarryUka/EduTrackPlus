@@ -1,0 +1,7 @@
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/unicoursehub/server/config/ServerConfig.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/unicoursehub/server/exception/GlobalExceptionHandler.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/unicoursehub/server/controller/CourseController.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/unicoursehub/server/service/CourseService.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/unicoursehub/server/UniCourseHubApplication.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/unicoursehub/server/exception/CourseNotFoundException.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/unicoursehub/server/model/Course.java
