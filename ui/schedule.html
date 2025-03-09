@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCourseHub - Schedule</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">UniCourseHub</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="courses.html">Course Catalog</a></li>
+            <li><a href="schedule.html" class="active">Schedule</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="schedule-header">
+            <h1>Weekly Schedule</h1>
+            <div class="schedule-controls">
+                <button id="prevWeek" class="btn-secondary">Previous Week</button>
+                <h2 id="currentWeek">Week of March 11, 2024</h2>
+                <button id="nextWeek" class="btn-secondary">Next Week</button>
+            </div>
+        </div>
+
+        <div class="full-schedule">
+            <div class="time-column">
+                <div class="time-header">Time</div>
+                <div class="time-slots">
+                    <div class="time-slot">8:00 AM</div>
+                    <div class="time-slot">9:00 AM</div>
+                    <div class="time-slot">10:00 AM</div>
+                    <div class="time-slot">11:00 AM</div>
+                    <div class="time-slot">12:00 PM</div>
+                    <div class="time-slot">1:00 PM</div>
+                    <div class="time-slot">2:00 PM</div>
+                    <div class="time-slot">3:00 PM</div>
+                    <div class="time-slot">4:00 PM</div>
+                    <div class="time-slot">5:00 PM</div>
+                </div>
+            </div>
+
+            <div class="schedule-grid" id="fullSchedule">
+                <!-- Days and time slots will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="schedule-legend">
+            <h3>Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: var(--secondary-color);"></div>
+                    <span>Lecture</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: var(--success-color);"></div>
+                    <span>Lab</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: var(--warning-color);"></div>
+                    <span>Tutorial</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/schedule.js"></script>
+</body>
+</html> 
