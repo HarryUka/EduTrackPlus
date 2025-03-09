@@ -11,11 +11,11 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.unicoursehub</groupId>
+    <groupId>com.edutrack</groupId>
     <artifactId>server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>UniCourseHub Server</name>
-    <description>Server for UniCourseHub application</description>
+    <name>EduTrack Server</name>
+    <description>Server for EduTrack application</description>
 
     <properties>
         <java.version>20</java.version>

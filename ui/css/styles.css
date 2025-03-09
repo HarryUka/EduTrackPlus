@@ -18,8 +18,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
     background-color: var(--background-color);
     color: var(--text-color);
     min-height: 100vh;
@@ -119,20 +119,210 @@ body {
     background-color: #2980b9;
 }
 
-/* Login Page */
-.login-form {
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Login Page Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.login-form h1 {
+@keyframes scaleIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #2c3e50, #3498db, #2980b9, #2c3e50);
+    background-size: 400% 400%;
+    animation: gradientFlow 15s ease infinite;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(8px);
+    animation: scaleIn 0.6s ease-out;
+}
+
+.brand-header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.brand-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientFlow 8s ease infinite;
+}
+
+.login-header {
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    color: #333;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+}
+
+.login-form {
+    animation: fadeIn 0.8s ease-out 0.2s backwards;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(44, 62, 80, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+    transform: translateY(-2px);
+}
+
+.login-form input:focus + label {
+    transform: translateY(-2px);
+    color: var(--secondary-color);
+}
+
+.login-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background-size: 200% 200%;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: gradientFlow 8s ease infinite;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    background-position: right center;
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+.help-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    animation: fadeIn 0.8s ease-out 0.4s backwards;
+}
+
+.help-link a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.help-link a:hover {
     color: var(--primary-color);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.password-toggle:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.eye-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.validation-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    min-height: 1.25rem;
 }
 
 /* Dashboard */
@@ -693,7 +883,7 @@ body {
     color: white;
     border-radius: 12px;
     margin-bottom: 2rem;
-    padding: 2rem;
+    padding: 2.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
@@ -704,13 +894,22 @@ body {
 }
 
 .welcome-text h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.welcome-text h1 #userName {
+    color: #fff;
+    position: relative;
+    display: inline-block;
 }
 
 .semester-info {
     font-size: 1.1rem;
     opacity: 0.9;
+    font-weight: 500;
 }
 
 .quick-actions {
@@ -722,10 +921,14 @@ body {
     background-color: rgba(255,255,255,0.2);
     color: white;
     border: 1px solid rgba(255,255,255,0.4);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .quick-actions .btn-secondary:hover {
     background-color: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
 }
 
 /* Resources Section */
@@ -845,10 +1048,18 @@ body {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .welcome-banner {
+        padding: 2rem;
+    }
+
+    .welcome-text h1 {
+        font-size: 1.75rem;
+    }
+
     .welcome-content {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .quick-actions {
@@ -893,4 +1104,33 @@ body {
 
 .course-image img:hover {
     transform: scale(1.02);
+}
+
+/* Loading animation for login button */
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.login-button.loading {
+    position: relative;
+    color: transparent;
+}
+
+.login-button.loading::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: loading 0.8s ease infinite;
 }
