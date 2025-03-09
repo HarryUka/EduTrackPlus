@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCourseHub - Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">UniCourseHub</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="courses.html">Course Catalog</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Welcome, <span id="userName">Student</span></h1>
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <h3>Enrolled Courses</h3>
+                    <p id="enrolledCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Current GPA</h3>
+                    <p id="currentGPA">0.00</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Credits</h3>
+                    <p id="totalCredits">0</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-grid">
+            <section class="dashboard-section">
+                <h2>Your Registered Courses</h2>
+                <div id="registeredCourses" class="course-grid">
+                    <!-- Courses will be dynamically populated here -->
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>Weekly Schedule</h2>
+                <div class="schedule-grid" id="weeklySchedule">
+                    <!-- Weekly schedule will be populated here -->
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>Upcoming Classes</h2>
+                <div id="upcomingClasses" class="schedule-list">
+                    <!-- Schedule will be dynamically populated here -->
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>Important Deadlines</h2>
+                <div id="deadlines" class="deadlines-list">
+                    <!-- Deadlines will be populated here -->
+                </div>
+            </section>
+        </div>
+
+        <section class="dashboard-section">
+            <h2>Course Progress Overview</h2>
+            <div id="courseProgress" class="progress-grid">
+                <!-- Course progress will be populated here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

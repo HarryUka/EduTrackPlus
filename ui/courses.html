@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCourseHub - Course Catalog</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">UniCourseHub</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="courses.html" class="active">Course Catalog</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Course Catalog</h1>
+        
+        <div class="search-filters">
+            <div class="search-box">
+                <input type="text" id="searchCourses" placeholder="Search courses...">
+            </div>
+            <div class="filters">
+                <select id="departmentFilter">
+                    <option value="">All Departments</option>
+                    <option value="CS">Computer Science</option>
+                    <option value="MATH">Mathematics</option>
+                    <option value="ENG">Engineering</option>
+                </select>
+                <select id="levelFilter">
+                    <option value="">All Levels</option>
+                    <option value="100">100 Level</option>
+                    <option value="200">200 Level</option>
+                    <option value="300">300 Level</option>
+                    <option value="400">400 Level</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="courseList" class="course-grid">
+            <!-- Courses will be dynamically populated here -->
+        </div>
+    </div>
+
+    <script src="js/courses.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniCourseHub - Course Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">UniCourseHub</div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="courses.html">Course Catalog</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="course-details">
+            <div class="course-header">
+                <h1 id="courseTitle">Course Title</h1>
+                <div class="course-meta">
+                    <span id="courseCode">Course Code</span>
+                    <span id="courseCredits">Credits: 3</span>
+                </div>
+            </div>
+
+            <div class="course-info-grid">
+                <div class="course-description">
+                    <h2>Course Description</h2>
+                    <p id="courseDescription">Loading course description...</p>
+                </div>
+
+                <div class="instructor-info">
+                    <h2>Instructor Information</h2>
+                    <div id="instructorDetails">
+                        <p><strong>Name:</strong> <span id="instructorName">Loading...</span></p>
+                        <p><strong>Email:</strong> <span id="instructorEmail">Loading...</span></p>
+                        <p><strong>Office Hours:</strong> <span id="officeHours">Loading...</span></p>
+                    </div>
+                </div>
+
+                <div class="course-schedule">
+                    <h2>Class Schedule</h2>
+                    <div id="scheduleDetails">
+                        <p><strong>Days:</strong> <span id="classDays">Loading...</span></p>
+                        <p><strong>Time:</strong> <span id="classTime">Loading...</span></p>
+                        <p><strong>Location:</strong> <span id="classLocation">Loading...</span></p>
+                    </div>
+                </div>
+
+                <div class="enrollment-section">
+                    <h2>Enrollment</h2>
+                    <p><strong>Available Seats:</strong> <span id="availableSeats">Loading...</span></p>
+                    <button id="enrollButton" class="btn-primary">Enroll in Course</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/course-details.js"></script>
+</body>
+</html>
