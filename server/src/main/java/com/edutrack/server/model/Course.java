@@ -1,21 +1,40 @@
 package com.edutrack.server.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "courses")
 public class Course {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String code;
     private String name;
     private String description;
-    private String instructor;
     private int credits;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "faculty_id")
+    @JsonBackReference
+    private Faculty faculty;
 
     public Course() {}
 
-    public Course(Long id, String code, String name, String description, String instructor, int credits) {
+    public Course(Long id, String code, String name, String description, Faculty faculty, int credits) {
         this.id = id;
         this.code = code;
         this.name = name;
         this.description = description;
-        this.instructor = instructor;
+        this.faculty = faculty;
         this.credits = credits;
     }
 
@@ -51,12 +70,12 @@ public class Course {
         this.description = description;
     }
 
-    public String getInstructor() {
-        return instructor;
+    public Faculty getFaculty() {
+        return faculty;
     }
 
-    public void setInstructor(String instructor) {
-        this.instructor = instructor;
+    public void setFaculty(Faculty faculty) {
+        this.faculty = faculty;
     }
 
     public int getCredits() {
