@@ -1,18 +1,18 @@
-package com.edutrack.server.config;
+package com.edutrackplus.server.config;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.edutrack.server.model.Course;
-import com.edutrack.server.model.Department;
-import com.edutrack.server.model.Faculty;
-import com.edutrack.server.model.Student;
-import com.edutrack.server.repository.CourseRepository;
-import com.edutrack.server.repository.DepartmentRepository;
-import com.edutrack.server.repository.FacultyRepository;
-import com.edutrack.server.repository.StudentRepository;
+import com.edutrackplus.server.model.Course;
+import com.edutrackplus.server.model.Department;
+import com.edutrackplus.server.model.Faculty;
+import com.edutrackplus.server.model.Student;
+import com.edutrackplus.server.repository.CourseRepository;
+import com.edutrackplus.server.repository.DepartmentRepository;
+import com.edutrackplus.server.repository.FacultyRepository;
+import com.edutrackplus.server.repository.StudentRepository;
 
 @Configuration
 public class TestDataInitializer {

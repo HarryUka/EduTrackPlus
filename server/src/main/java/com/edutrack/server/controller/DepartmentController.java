@@ -1,4 +1,4 @@
-package com.edutrack.server.controller;
+package com.edutrackplus.server.controller;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edutrack.server.model.Department;
-import com.edutrack.server.service.DepartmentService;
+import com.edutrackplus.server.model.Department;
+import com.edutrackplus.server.service.DepartmentService;
 
 @RestController
 @RequestMapping("/api/departments")

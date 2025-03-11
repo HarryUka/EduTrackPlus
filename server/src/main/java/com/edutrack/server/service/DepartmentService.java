@@ -1,4 +1,4 @@
-package com.edutrack.server.service;
+package com.edutrackplus.server.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.edutrack.server.model.Department;
-import com.edutrack.server.repository.DepartmentRepository;
+import com.edutrackplus.server.model.Department;
+import com.edutrackplus.server.repository.DepartmentRepository;
 
 @Service
 public class DepartmentService {

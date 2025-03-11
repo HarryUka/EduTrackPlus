@@ -1,4 +1,4 @@
-package com.edutrack.server.controller;
+package com.edutrackplus.server.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.edutrack.server.model.Course;
+import com.edutrackplus.server.model.Course;
 
 @RestController
 @RequestMapping("/api/courses")

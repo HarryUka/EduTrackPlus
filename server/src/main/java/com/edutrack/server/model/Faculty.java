@@ -1,4 +1,4 @@
-package com.edutrack.server.model;
+package com.edutrackplus.server.model;
 
 import java.util.HashSet;
 import java.util.Set;

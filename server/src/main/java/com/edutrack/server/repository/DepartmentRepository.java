@@ -1,9 +1,9 @@
-package com.edutrack.server.repository;
+package com.edutrackplus.server.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.edutrack.server.model.Department;
+import com.edutrackplus.server.model.Department;
 
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Long> {

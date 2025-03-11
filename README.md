@@ -1,10 +1,10 @@
-# EduTrack - Modern Educational Management System
+# EduTrackPlus - Modern Educational Management System
 
-![EduTrack Logo](ui/images/edutrack-logo.png)
+![EduTrackPlus Logo](ui/images/edutrackplus-logo.png)
 
 ## Overview
 
-EduTrack is a modern, user-friendly educational management system designed to streamline the academic experience for students and educators. With its intuitive interface and real-time updates, EduTrack makes it easy to manage courses, track academic progress, and stay organized throughout the academic journey.
+EduTrackPlus is a modern, user-friendly educational management system designed to streamline the academic experience for students and educators. With its intuitive interface and real-time updates, EduTrackPlus makes it easy to manage courses, track academic progress, and stay organized throughout the academic journey.
 
 ## Features
 
@@ -67,8 +67,8 @@ EduTrack is a modern, user-friendly educational management system designed to st
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/edutrack.git
-cd edutrack
+git clone https://github.com/yourusername/edutrackplus.git
+cd edutrackplus
 ```
 
 2. Build the backend:
@@ -101,7 +101,7 @@ mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ## Project Structure
 
 ```
-edutrack/
+edutrackplus/
 ├── server/                 # Backend server
 │   ├── src/
 │   │   ├── main/
@@ -148,9 +148,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For support or queries, please contact:
-- Email: support@edutrack.com
-- Website: https://www.edutrack.com
+- Email: support@edutrackplus.com
+- Website: https://www.edutrackplus.com
 
 ---
 
-Made with ❤️ by the EduTrack Team 
+Made with ❤️ by the EduTrackPlus Team 
