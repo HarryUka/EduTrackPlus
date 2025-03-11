@@ -5,6 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduTrackPlus - Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional inline styles for dashboard */
+        .quick-actions button {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-actions button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .resource-btn {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -12,6 +34,8 @@
         <ul class="nav-links">
             <li><a href="dashboard.html" class="active">Dashboard</a></li>
             <li><a href="courses.html">Course Catalog</a></li>
+            <li><a href="faculty.html">Faculty</a></li>
+            <li><a href="students.html">Students</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li class="notifications-dropdown">
@@ -35,8 +59,8 @@
                     <p class="semester-info">Current Semester: Spring 2024</p>
                 </div>
                 <div class="quick-actions">
-                    <button class="btn-secondary" onclick="window.location.href='courses.html'">Browse Courses</button>
-                    <button class="btn-secondary" onclick="window.location.href='schedule.html'">View Schedule</button>
+                    <button class="btn-secondary browse-courses-btn">Browse Courses</button>
+                    <button class="btn-secondary view-schedule-btn">View Schedule</button>
                 </div>
             </div>
         </div>
@@ -113,25 +137,25 @@
                     <span class="resource-icon">📚</span>
                     <h3>Library</h3>
                     <p>Access digital resources and reserve study rooms</p>
-                    <a href="#" class="btn-secondary">Visit Library</a>
+                    <a href="#" class="btn-secondary resource-btn" data-feature="library">Visit Library</a>
                 </div>
                 <div class="resource-card">
                     <span class="resource-icon">📝</span>
                     <h3>Academic Support</h3>
                     <p>Connect with tutors and academic advisors</p>
-                    <a href="#" class="btn-secondary">Get Help</a>
+                    <a href="#" class="btn-secondary resource-btn" data-feature="academic-support">Get Help</a>
                 </div>
                 <div class="resource-card">
                     <span class="resource-icon">📅</span>
                     <h3>Office Hours</h3>
                     <p>Schedule meetings with your professors</p>
-                    <a href="#" class="btn-secondary">Book Session</a>
+                    <a href="#" class="btn-secondary resource-btn" data-feature="office-hours">Book Session</a>
                 </div>
                 <div class="resource-card">
                     <span class="resource-icon">🎓</span>
                     <h3>Career Services</h3>
                     <p>Explore internships and career opportunities</p>
-                    <a href="#" class="btn-secondary">Learn More</a>
+                    <a href="#" class="btn-secondary resource-btn" data-feature="career-services">Learn More</a>
                 </div>
             </div>
         </section>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Directory - EduTrackPlus</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>EduTrackPlus</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html"><i class="icon-dashboard"></i> Dashboard</a></li>
+                <li><a href="courses.html"><i class="icon-courses"></i> Courses</a></li>
+                <li><a href="faculty.html"><i class="icon-faculty"></i> Faculty</a></li>
+                <li class="active"><a href="students.html"><i class="icon-students"></i> Students</a></li>
+                <li><a href="schedule.html"><i class="icon-schedule"></i> Schedule</a></li>
+                <li><a href="profile.html"><i class="icon-profile"></i> Profile</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" id="logout"><i class="icon-logout"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Student Directory</h1>
+                <div class="user-info">
+                    <span class="notification-icon"><i class="icon-notification"></i></span>
+                    <a href="profile.html" class="profile-link">My Profile</a>
+                </div>
+            </header>
+
+            <!-- Student Search and Filters -->
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" id="searchStudents" placeholder="Search students by name, ID, or email...">
+                    <button class="search-btn"><i class="icon-search"></i></button>
+                </div>
+                <div class="filter-options">
+                    <select id="departmentFilter">
+                        <option value="">All Departments</option>
+                        <option value="CS">Computer Science</option>
+                        <option value="MATH">Mathematics</option>
+                        <option value="ENG">Engineering</option>
+                    </select>
+                    <select id="yearFilter">
+                        <option value="">All Years</option>
+                        <option value="1">Year 1</option>
+                        <option value="2">Year 2</option>
+                        <option value="3">Year 3</option>
+                        <option value="4">Year 4</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Student List -->
+            <div class="content-section">
+                <div id="studentList" class="student-list">
+                    <!-- Student cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/students.js"></script>
+</body>
+</html> 

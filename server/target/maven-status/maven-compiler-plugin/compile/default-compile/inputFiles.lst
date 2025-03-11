@@ -1,0 +1,13 @@
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/repository/FacultyRepository.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/repository/CourseRepository.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/controller/DepartmentController.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/repository/DepartmentRepository.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/model/Faculty.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/model/Department.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/model/Student.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/config/TestDataInitializer.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/controller/CourseController.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/repository/StudentRepository.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/model/Course.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/EduTrackPlusApplication.java
+/Users/harryukaegbu/UniCourseHub/server/src/main/java/com/edutrackplus/server/service/DepartmentService.java

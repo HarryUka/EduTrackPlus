@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Directory - EduTrackPlus</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>EduTrackPlus</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html"><i class="icon-dashboard"></i> Dashboard</a></li>
+                <li><a href="courses.html"><i class="icon-courses"></i> Courses</a></li>
+                <li class="active"><a href="faculty.html"><i class="icon-faculty"></i> Faculty</a></li>
+                <li><a href="students.html"><i class="icon-students"></i> Students</a></li>
+                <li><a href="schedule.html"><i class="icon-schedule"></i> Schedule</a></li>
+                <li><a href="profile.html"><i class="icon-profile"></i> Profile</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" id="logout"><i class="icon-logout"></i> Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>Faculty Directory</h1>
+                <div class="user-info">
+                    <span class="notification-icon"><i class="icon-notification"></i></span>
+                    <a href="profile.html" class="profile-link">My Profile</a>
+                </div>
+            </header>
+
+            <!-- Faculty Search and Filters -->
+            <div class="filters-container">
+                <div class="search-box">
+                    <input type="text" id="searchFaculty" placeholder="Search faculty by name, title, or research area...">
+                    <button class="search-btn"><i class="icon-search"></i></button>
+                </div>
+                <div class="filter-options">
+                    <select id="departmentFilter">
+                        <option value="">All Departments</option>
+                        <option value="CS">Computer Science</option>
+                        <option value="MATH">Mathematics</option>
+                        <option value="ENG">Engineering</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Faculty List -->
+            <div class="content-section">
+                <div id="facultyList" class="faculty-list">
+                    <!-- Faculty cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/faculty.js"></script>
+</body>
+</html> 

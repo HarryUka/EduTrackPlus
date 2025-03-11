@@ -1,0 +1,13 @@
+com/edutrackplus/server/config/TestDataInitializer.class
+com/edutrackplus/server/repository/CourseRepository.class
+com/edutrackplus/server/controller/CourseController.class
+com/edutrackplus/server/repository/DepartmentRepository.class
+com/edutrackplus/server/repository/FacultyRepository.class
+com/edutrackplus/server/model/Course.class
+com/edutrackplus/server/EduTrackPlusApplication.class
+com/edutrackplus/server/model/Department.class
+com/edutrackplus/server/model/Faculty.class
+com/edutrackplus/server/model/Student.class
+com/edutrackplus/server/repository/StudentRepository.class
+com/edutrackplus/server/service/DepartmentService.class
+com/edutrackplus/server/controller/DepartmentController.class
